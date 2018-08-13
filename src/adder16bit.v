@@ -69,7 +69,7 @@ module adder16bit
 	input c14;
 	input c15;
 	
-	/////32 bit output
+	/////16 bit output
 	output o0;
 	output o1;
 	output o2;
@@ -88,18 +88,40 @@ module adder16bit
 	output o15;
 	output o16;
 	
-	assign sum1 = a0 ^ b0 ^ c0;
-	assign carry1 = ((a0 ^ b0) & c0) | (a0 & b0);
+	assign o0 = a0 ^ b0 ^ c0;
+	assign c1 = ((a0 ^ b0) & c0) | (a0 & b0);
 	
-	assign sum2 = a1 ^ b1 ^ c1;
-	assign carry2 = ((a0 ^ b0) & c0) | (a0 & b0);
+	assign o1 = a1 ^ b1 ^ c1;
+	assign c2 = ((a1 ^ b1) & c1) | (a1 & b1);
 	
-	assign sum3 = a2 ^ b2 ^ c2;
-	assign carry3 = ((a0 ^ b0) & c0) | (a0 & b0);
+	assign o2 = a2 ^ b2 ^ c2;
+	assign c3 = ((a2 ^ b2) & c2) | (a2 & b2);
 	
-	assign sum4 = a3 ^ b3 ^ c3;
-	assign carry4 = ((a0 ^ b0) & c0) | (a0 & b0);
-
-	//unsure of how to implement the carries 2,3,4
+	assign o3 = a3 ^ b3 ^ c3;
+	assign c4 = ((a3 ^ b3) & c3) | (a3 & b3);
+	
+	assign o4 = a4 ^ b4 ^ c4;
+	assign c5 = ((a4 ^ b4) & c4) | (a4 & b4);
+	
+	assign o5 = a5 ^ b5 ^ c5;
+	assign c6 = ((a5 ^ b5) & c5) | (a5 & b5);
+	
+	assign o6 = a6 ^ b6 ^ c6;
+	assign c7 = ((a6 ^ b6) & c6) | (a6 & b6);
+	
+	assign o7 = a7 ^ b7 ^ c7;
+	assign c8 = ((a7 ^ b7) & c7) | (a7 & b7);
+	
+	assign o8 = a8 ^ b8 ^ c8;
+	assign c9 = ((a8 ^ b8) & c8) | (a8 & b8);
+	
+	assign o9 = a9 ^ b9 ^ c9;
+	assign c10 = ((a9 ^ b9) & c9) | (a9 & b9);
+	
+	assign c10 = a10 ^ b10 ^ c10;
+	assign c11 = ((a10 ^ b10) & c10) | (a10 & b10);
+	
+	assign c11 = a11 ^ b11 ^ c11;
+	assign c12 = ((a11 ^ b11) & c11) | (a11 & b11);
 
 endmodule
