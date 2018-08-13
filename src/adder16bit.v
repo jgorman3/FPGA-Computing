@@ -172,6 +172,6 @@ module adder16bit
 	
 	assign o15 = a15 ^ b15 ^ c15;
 	//overflow can only exist when a combo of them is 1
-	assign o16 = (a15 & b15) | (b15 & c15) | (c15 & a15)
+	assign o16 = (a15 & b15) | (b15 & c15) | (c15 & a15);
 	
 endmodule
