@@ -14,7 +14,7 @@ module adder16bit
 	o16
 	);
 	
-	//numbers are 16 bit, producing a 32 bit number
+	//numbers are 16 bit, producing another 16 bit number (potential overflow)
 	/////number a
 	input a0;
 	input a1;
@@ -51,23 +51,41 @@ module adder16bit
 	input b14;
 	input b15;
 	
-	//carry for look-ahead carry
+	/////carry for look-ahead carry, either generated or propagated
 	input c0;
-	input c1;
-	input c2;
-	input c3;
-	input c4;
-	input c5;
-	input c6;
-	input c7;
-	input c8;
-	input c9;
-	input c10;
-	input c11;
-	input c12; 
-	input c13;
-	input c14;
-	input c15;
+	output c1;
+	output c2;
+	output c3;
+	output c4;
+	output c5;
+	output c6;
+	output c7;
+	output c8;
+	output c9;
+	output c10;
+	output c11;
+	output c12; 
+	output c13;
+	output c14;
+	output c15;
+	
+	//wire all carry outputs
+	wire c1;
+	wire c2;
+	wire c3;
+	wire c4;
+	wire c5;
+	wire c6;
+	wire c7;
+	wire c8;
+	wire c9;
+	wire c10;
+	wire c11;
+	wire c12;
+	wire c13;
+	wire c14;
+	wire c15;
+	wire c16;
 	
 	/////16 bit output
 	output o0;
@@ -88,40 +106,72 @@ module adder16bit
 	output o15;
 	output o16;
 	
+	/////wire all 16 output bits 
+	wire o0;
+	wire o1;
+	wire o2;
+	wire o3;
+	wire o4;
+	wire o5;
+	wire o6;
+	wire o7;
+	wire o8;
+	wire o9;
+	wire o10;
+	wire o11;
+	wire o12;
+	wire o13;
+	wire o14;
+	wire o15;
+	wire o16;
+	
+	/////assign the wires with the respective operation
 	assign o0 = a0 ^ b0 ^ c0;
-	assign c1 = ((a0 ^ b0) & c0) | (a0 & b0);
+	assign c1 = ((a1 ^ b1) & c0) | (a1 & b1);
 	
 	assign o1 = a1 ^ b1 ^ c1;
-	assign c2 = ((a1 ^ b1) & c1) | (a1 & b1);
+	assign c2 = ((a2 ^ b2) & c1) | (a2 & b2);
 	
 	assign o2 = a2 ^ b2 ^ c2;
-	assign c3 = ((a2 ^ b2) & c2) | (a2 & b2);
+	assign c3 = ((a3 ^ b3) & c2) | (a3 & b3);
 	
 	assign o3 = a3 ^ b3 ^ c3;
-	assign c4 = ((a3 ^ b3) & c3) | (a3 & b3);
+	assign c4 = ((a4 ^ b4) & c3) | (a4 & b4);
 	
 	assign o4 = a4 ^ b4 ^ c4;
-	assign c5 = ((a4 ^ b4) & c4) | (a4 & b4);
+	assign c5 = ((a5 ^ b5) & c4) | (a5 & b5);
 	
 	assign o5 = a5 ^ b5 ^ c5;
-	assign c6 = ((a5 ^ b5) & c5) | (a5 & b5);
+	assign c6 = ((a6 ^ b6) & c5) | (a6 & b6);
 	
 	assign o6 = a6 ^ b6 ^ c6;
-	assign c7 = ((a6 ^ b6) & c6) | (a6 & b6);
+	assign c7 = ((a7 ^ b7) & c6) | (a7 & b7);
 	
 	assign o7 = a7 ^ b7 ^ c7;
-	assign c8 = ((a7 ^ b7) & c7) | (a7 & b7);
+	assign c8 = ((a8 ^ b8) & c7) | (a8 & b8);
 	
 	assign o8 = a8 ^ b8 ^ c8;
-	assign c9 = ((a8 ^ b8) & c8) | (a8 & b8);
+	assign c9 = ((a9 ^ b9) & c8) | (a9 & b9);
 	
 	assign o9 = a9 ^ b9 ^ c9;
-	assign c10 = ((a9 ^ b9) & c9) | (a9 & b9);
+	assign c10 = ((a10 ^ b10) & c9) | (a10 & b10);
 	
-	assign c10 = a10 ^ b10 ^ c10;
-	assign c11 = ((a10 ^ b10) & c10) | (a10 & b10);
+	assign o10 = a10 ^ b10 ^ c10;
+	assign c11 = ((a11 ^ b11) & c10) | (a11 & b11);
 	
-	assign c11 = a11 ^ b11 ^ c11;
-	assign c12 = ((a11 ^ b11) & c11) | (a11 & b11);
-
+	assign o11 = a11 ^ b11 ^ c11;
+	assign c12 = ((a12 ^ b12) & c11) | (a12 & b12);
+	
+	assign o12 = a12 ^ b12 ^ c12;
+	assign c13 = ((a13 ^ b13) & c12) | (a13 & b13);
+	
+	assign o13 = a13 ^ b13 ^ c13;
+	assign c14 = ((a14 ^ b14) & c13) | (a14 & b14);
+	
+	assign o14 = a14 ^ b14 ^ c14;
+	assign c15 = ((a15 ^ b15) & c14) | (a15 & b15);
+	
+	assign o15 = a15 ^ b15 ^ c15;
+	//looking into how to calculate overflow
+	
 endmodule
