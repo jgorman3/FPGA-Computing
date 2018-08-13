@@ -16,58 +16,20 @@ module adder16bit
 	
 	//numbers are 16 bit, producing another 16 bit number (also overflow)
 	/////number a
-	input a0;
-	input a1;
-	input a2;
-	input a3;
-	input a4;
-	input a5;
-	input a6;
-	input a7;
-	input a8;
-	input a9;
-	input a10;
-	input a11;
-	input a12; 
-	input a13;
-	input a14;
-	input a15;
+	input a0, a1, a2, a3,
+	a4, a5, a6, a7, a8, a9,
+	a10, a11, a12, a13, a14, a15;
 	
 	/////number b
-	input b0;
-	input b1;
-	input b2;
-	input b3;
-	input b4;
-	input b5;
-	input b6;
-	input b7;
-	input b8;
-	input b9;
-	input b10;
-	input b11;
-	input b12; 
-	input b13;
-	input b14;
-	input b15;
+	input b0, b1, b2, b3,
+	b4, b5, b6, b7, b8, b9,
+	b10, b11, b12, b13, b14, b15;
 	
 	/////carry for look-ahead carry, either generated or propagated
 	input c0;
-	output c1;
-	output c2;
-	output c3;
-	output c4;
-	output c5;
-	output c6;
-	output c7;
-	output c8;
-	output c9;
-	output c10;
-	output c11;
-	output c12; 
-	output c13;
-	output c14;
-	output c15;
+	output c1, c2, c3, c4, c5,
+	c6, c7, c8, c9, c10, c11,
+	c12, c13, c14, c15;
 	
 	//wire all carry outputs
 	wire c1;
@@ -87,23 +49,10 @@ module adder16bit
 	wire c15;
 	
 	/////16 bit output
-	output o0;
-	output o1;
-	output o2;
-	output o3;
-	output o4;
-	output o5;
-	output o6;
-	output o7;
-	output o8;
-	output o9;
-	output o10;
-	output o11;
-	output o12;
-	output o13;
-	output o14;
-	output o15;
-	output o16;
+	output o0, o1, o2, o3,
+	o4, o5, o6, o7, o8, o9,
+	o10, o11, o12, o13, o14,
+	o15, o16;
 	
 	/////wire all 16 output bits 
 	wire o0;
