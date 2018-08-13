@@ -1,23 +1,3 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: N/A
-// Engineer: Joe Gorman
-// 
-// Create Date:    04:33:10 07/04/2018 
-// Design Name: 
-// Module Name:    adder16bit 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
 module adder16bit
 	(
 	a0, a1, a2, a3, a4, a5, a6, a7, a8,
