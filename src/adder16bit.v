@@ -14,7 +14,7 @@ module adder16bit
 	o16
 	);
 	
-	//numbers are 16 bit, producing another 16 bit number (potential overflow)
+	//numbers are 16 bit, producing another 16 bit number (also overflow)
 	/////number a
 	input a0;
 	input a1;
@@ -85,7 +85,6 @@ module adder16bit
 	wire c13;
 	wire c14;
 	wire c15;
-	wire c16;
 	
 	/////16 bit output
 	output o0;
@@ -172,6 +171,7 @@ module adder16bit
 	assign c15 = ((a15 ^ b15) & c14) | (a15 & b15);
 	
 	assign o15 = a15 ^ b15 ^ c15;
-	//looking into how to calculate overflow
+	//overflow can only exist when a combo of them is 1
+	assign o16 = (a15 & b15) | (b15 & c15) | (c15 & a15)
 	
 endmodule
