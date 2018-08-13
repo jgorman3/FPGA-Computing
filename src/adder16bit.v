@@ -88,22 +88,6 @@ module adder16bit
 	output o13;
 	output o14;
 	output o15;
-	output o16;
-	output o17;
-	output o18;
-	output o19;
-	output o20;
-	output o21;
-	output o22;
-	output o23;
-	output o24;
-	output o25;
-	output o26;
-	output o27;
-	output o28;
-	output o29;
-	output o30;
-	output o31;
 	
 	assign sum1 = a0 ^ b0 ^ c0;
 	assign carry1 = ((a0 ^ b0) & c0) | (a0 & b0);
