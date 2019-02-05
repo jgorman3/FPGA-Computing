@@ -5,7 +5,7 @@ architecture hello_world of hello_world is
 begin
   stimulus : process
   begin
-    assert false report "Hello World By Deepak"
+    assert false report "Hello World By Joe"
     severity note;
     wait;
  end process stimulus;
